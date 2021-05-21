@@ -60,37 +60,36 @@ body{
         background-color: gold;
     }
 }
-.container{
-    min-height: 100vh;
-    max-width: 80vw;
-    margin: 0 auto;
-}
 
-/* Estílos Bloque 1 header e hijos */
+/* Modo Tablet PC */
 
-.header{
-    margin: var(--bleed-container);
-    display: flex;
-    padding: var(--bleed-container);
-    gap: var(--gap);
-}
-.headerbar{
-    display: flex;
-    padding: var(--bleed-container); 
-    gap: var(--gap); 
-}
-.headerbar>div {
-    height: var(--height);
-    flex-grow: 1;
-}
-@media (min-width: 40rem){
-    .header{
+@media(min-width:40rem){
+    .container{
+        min-height: 100vh;
+        max-width: 80vw;
+        margin: 0 auto;
+        padding: var(--bleed-container);
+    }
+
+    /* Header e hijos */
+    .header{        
         display: flex;
         flex-direction: column;
+        padding: var(--bleed-container);
+        gap: var(--gap);
+    }
+    .headerbar{
+        display: flex;
+        padding: var(--bleed-container); 
+        gap: var(--gap); 
+    }
+    .headerbar>div {
+        height: var(--height);
+        flex-grow: 1;
     }
     .headerbar>div:nth-child(2){
-       flex-grow: 2;
-    }
+        flex-grow: 2;
+     }
 }
 @media (max-width: 40rem){
     .headerbar{
