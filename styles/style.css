@@ -1,14 +1,16 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background-color: whitesmoke;
     font-family: sans-serif;
     font-size: 1.1em;
 }
-:root{
+
+:root {
     --bleed-content: 0.5em 0.75rem;
     --bleed-container: 1.5rem;
     --border-radius: 0.5rem;
@@ -16,162 +18,178 @@ body{
     --gap: 1.5rem;
 }
 
-@media (prefers-color-scheme: light){
-    .contaner{
-        background-color: whitesmoke ;
+@media (prefers-color-scheme: light) {
+    .contaner {
+        background-color: whitesmoke;
     }
 
-    .header{
+    .header {
         background-color: black;
     }
-    .headerbar{
+
+    .headerbar {
         background-color: rgb(45, 45, 68);
     }
-    .headerbar>div{
+
+    .headerbar>div {
         background-color: rgb(199, 71, 71);
     }
+
     .navbar {
         background-color: rgb(255, 123, 0);
     }
+
     .navbar>span {
         background-color: rgb(230, 219, 104);
     }
 
-    .main{
+    .main {
         background-color: yellow;
     }
-    .article-wrapper{
+
+    .article-wrapper {
         background-color: rgb(45, 45, 68);
     }
-    .article-wrapper>div{
+
+    .article-wrapper>div {
         background-color: rgb(67, 89, 147);
     }
-    .aside{
+
+    .aside {
         background-color: crimson;
     }
-    .aside>div{
+
+    .aside>div {
         background-color: gold;
     }
 
-    .footer{
+    .footer {
         background-color: #444;
     }
-    .footer-section{
+
+    .footer-section {
         background-color: gold;
     }
 }
 
 /* Modo Tablet PC */
 
-@media(min-width:40rem){
-    .container{
+@media(min-width:40rem) {
+    .container {
         min-height: 100vh;
-        max-width: 80vw;
+        min-width: 40rem;
+        max-width: 80rem;
         margin: 0 auto;
         padding: var(--bleed-container);
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
     }
 
     /* Header e hijos */
-    .header{        
+    .header {
         display: flex;
         flex-direction: column;
         padding: var(--bleed-container);
         gap: var(--gap);
     }
-    .headerbar{
+
+    .headerbar {
         display: flex;
-        padding: var(--bleed-container); 
-        gap: var(--gap); 
+        padding: var(--bleed-container);
+        gap: var(--gap);
     }
+
     .headerbar>div {
         height: var(--height);
         flex-grow: 1;
     }
-    .headerbar>div:nth-child(2){
+
+    .headerbar>div:nth-child(2) {
         flex-grow: 2;
-     }
-     .navbar {
+    }
+
+    .navbar {
         display: flex;
         padding: var(--bleed-container);
     }
-    .navbar>span{
+
+    .navbar>span {
         flex-grow: 1;
+        height: var(--height);
+    }
+
+    /* Estílos Bloque 2 Main e hijos */
+
+    .main {
+        display: flex;
+        gap: var(--gap);
+        padding: var(--bleed-container);
+    }
+
+    .article-wrapper {
+        flex-grow: 2;
+        display: flex;
+        gap: var(--gap);
+        padding: var(--bleed-container);
+        flex-wrap: wrap;
+    }
+
+    .article-wrapper>div {
+        height: var(--height);
+        flex-grow: 1;
+        flex-basis: 40%;
+    }
+
+    .article-wrapper>div:last-child {
+        flex-grow: 2;
+        flex-basis: 100%;
+        background-color: rgb(113, 144, 164);
+    }
+
+    .aside {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: var(--bleed-container);
+        gap: var(--gap);
+    }
+
+    .aside>div {
         height: var(--height);
         
     }
+
+    /* Estílos Bloque 1 Footer e hijos */
+
+    .footer {
+        
+        padding: var(--bleed-container);
+        display: flex;
+
+    }
+
+    .footer-section {
+        flex: 1;
+        height: var(--height);
+    }
 }
-@media (max-width: 40rem){
-    .headerbar{
+
+@media (max-width: 40rem) {
+    .headerbar {
         display: flex;
         flex-direction: column;
     }
-    .headerbar>div{
+
+    .headerbar>div {
         flex-grow: 1;
     }
-    
+
 }
 
 
 
-/* Estílos Bloque 2 Main e hijos */
 
-.main{
-    
-    height: 15rem;
-    margin: 1rem;
-    display: flex;
-}
-.article-wrapper {
-    flex-grow: 2;
-    margin: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-.article-wrapper>div{
-    
-    flex-grow: 1;
-    flex-basis: 40%;
-    margin: 1rem;
-    
-}
-@media(min-width: 40rem){
-    .article-wrapper>div:last-child{
-        flex-grow: 2;
-        flex-basis: 100%;
-    }
-}
 
-.article-wrapper>div:last-child{
-    background-color: lightskyblue;
-}
-
-.aside {
-    
-    margin: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.aside>div{
-    height: 2rem;
-    flex-shrink: 10%;
-    margin: 1rem;
-}
-
-/* Estílos Bloque 1 Footer e hijos */
-
-.footer {
-    height: 5rem;
-    margin: 1rem;
-    display: flex;
-}
-.footer-section{
-    
-    flex: 1;
-    margin: 1rem;
-}
-
-@media(max-width: 40rem){
-   
-}
+@media(max-width: 40rem) {}
