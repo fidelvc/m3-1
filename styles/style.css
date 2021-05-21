@@ -14,13 +14,17 @@ body{
 }
 
 .container{
-    min-height: 40rem;
+    margin: 0 auto;
+    min-height: 100vh;
     min-width: 40rem;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .header{
-    height: 10rem;
+    flex-grow: 1;
     background-color: black;
     margin: 1rem;
     display: flex;
@@ -55,6 +59,7 @@ body{
 
 
 .main{
+    flex-grow: 4;
     height: 15rem;
     background-color: yellow;
     margin: 1rem;
@@ -99,6 +104,7 @@ body{
 
 
 .footer {
+    flex-grow: 1;
     height: 5rem;
     background-color: black;
     margin: 1rem;
