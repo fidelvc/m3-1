@@ -90,6 +90,15 @@ body{
     .headerbar>div:nth-child(2){
         flex-grow: 2;
      }
+     .navbar {
+        display: flex;
+        padding: var(--bleed-container);
+    }
+    .navbar>span{
+        flex-grow: 1;
+        height: var(--height);
+        
+    }
 }
 @media (max-width: 40rem){
     .headerbar{
@@ -102,15 +111,7 @@ body{
     
 }
 
-.navbar {
-    display: flex;
-    padding: var(--bleed-container);
-}
-.navbar>span{
-    flex-grow: 1;
-    height: var(--height);
-    
-}
+
 
 /* Estílos Bloque 2 Main e hijos */
 
