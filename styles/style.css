@@ -11,107 +11,161 @@ body{
 :root{
     --bleed: 0.5em 0.75rem;
     --border-radius: 0.5rem;
+    --margin: 1rem;
+    --height: 1rem;
 }
 
+@media (prefers-color-scheme: light){
+    .contaner{
+        background-color: whitesmoke ;
+    }
+
+    .header{
+        background-color: #444;
+    }
+    .headerbar{
+        background-color: rgb(25, 25, 54);
+    }
+    .headerbar>div{
+        background-color: crimson;
+    }
+    .navbar {
+        background-color: orange;
+    }
+    .navbar>span {
+        background-color: palegoldenrod;
+    }
+
+    .main{
+        background-color: yellow;
+    }
+    .article-wrapper{
+        background-color: rgb(26, 26, 62);
+    }
+    .article-wrapper>div{
+        background-color: mediumblue;
+    }
+    .aside{
+        background-color: crimson;
+    }
+    .aside>div{
+        background-color: gold;
+    }
+
+    .footer{
+        background-color: #444;
+    }
+    .footer-section{
+        background-color: gold;
+    }
+}
 .container{
-    margin: 0 auto;
     min-height: 100vh;
-    min-width: 40rem;
     max-width: 80vw;
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
 }
 
+/* Estílos Bloque 1 header e hijos */
 
 .header{
-    flex-grow: 1;
-    background-color: black;
-    margin: 1rem;
+    margin: var(--margin);
     display: flex;
     flex-direction: column;
 }
 .headerbar{
-    flex: 1;
-    background-color: rgb(25, 25, 54);
-    margin: 1rem;
-    display: flex;
+    margin: var(--margin);
+    display: flex;    
 }
 .headerbar>div {
-    flex: 1;
-    background-color: crimson;
-    margin: 1rem;
+    height: var(--height);
+    margin: var(--margin); 
+    flex-grow: 1;
 }
-.headerbar>div:nth-child(2){
-    flex:  2;
+@media (min-width: 40rem){
+    .headerbar>div:nth-child(2){
+       flex-grow: 2;
+    }
+}
+@media (max-width: 40rem){
+    .headerbar{
+        display: flex;
+        flex-direction: column;
+    }
+    .headerbar>div{
+        flex-grow: 1;
+    }
+    
 }
 
 .navbar {
-    flex: 1;
-    background-color: orange;
-    margin: 1rem;
+    margin: var(--margin);
     display: flex;
 }
 .navbar>span{
-    flex: 1;
-    background-color: palegoldenrod;
-    margin: 1rem;
+    flex-grow: 1;
+    height: var(--height);
+    margin: var(--margin);
 }
 
+/* Estílos Bloque 2 Main e hijos */
 
 .main{
-    flex-grow: 4;
+    
     height: 15rem;
-    background-color: yellow;
     margin: 1rem;
     display: flex;
 }
-.section_main {
+.article-wrapper {
     flex-grow: 2;
     margin: 1rem;
-    background-color: rgb(26, 26, 62);
-    
     display: flex;
     flex-wrap: wrap;
     
 }
-.section_main>div{
-    background-color: mediumblue;
+.article-wrapper>div{
+    
     flex-grow: 1;
     flex-basis: 40%;
     margin: 1rem;
     
 }
-.section_main>div:last-child{
-    flex-grow: 2;
-    flex-basis: 100%;
+@media(min-width: 40rem){
+    .article-wrapper>div:last-child{
+        flex-grow: 2;
+        flex-basis: 100%;
+    }
+}
+
+.article-wrapper>div:last-child{
     background-color: lightskyblue;
 }
 
 .aside {
-    flex-grow: 1;
-    background-color: crimson;
+    
     margin: 1rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
 .aside>div{
-    background-color: gold;
     height: 2rem;
     flex-shrink: 10%;
     margin: 1rem;
 }
 
+/* Estílos Bloque 1 Footer e hijos */
 
 .footer {
-    flex-grow: 1;
     height: 5rem;
-    background-color: black;
     margin: 1rem;
     display: flex;
 }
-.section_footer{
-    background-color: gold;
+.footer-section{
+    
     flex: 1;
     margin: 1rem;
+}
+
+@media(max-width: 40rem){
+   
 }
