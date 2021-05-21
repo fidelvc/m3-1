@@ -73,8 +73,7 @@ body {
 }
 
 /* Modo Tablet PC */
-
-@media(min-width:40rem) {
+@media screen {
     .container {
         min-height: 100vh;
         min-width: 40rem;
@@ -123,7 +122,7 @@ body {
 
     .main {
         display: flex;
-        flex-direction: column;
+
         gap: var(--gap);
         padding: var(--bleed-container);
     }
@@ -165,16 +164,18 @@ body {
     /* Estílos Bloque 1 Footer e hijos */
 
     .footer {
-        
         padding: var(--bleed-container);
         display: flex;
-
     }
 
     .footer-section {
         flex: 1;
         height: var(--height);
     }
+}
+
+@media(min-width:40rem) {
+    
 }
 
 @media (max-width: 40rem) {
